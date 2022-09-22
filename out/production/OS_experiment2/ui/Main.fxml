@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="BorderPane1" prefHeight="650.0" prefWidth="700.0" stylesheets="@../css/mainCSS.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainController">
+   <children>
+      <GridPane prefHeight="651.0" prefWidth="700.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="362.0" text="添加進程" />
+                  <HBox prefHeight="229.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="進程名" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="AName" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="BName" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="CName" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="DName" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="運行時間" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="ATime" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="BTime" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="CTime" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="DTime" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="進程空間" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="AKB" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="BKB" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="CKB" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <TextField fx:id="DKB" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="優先級" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <ChoiceBox fx:id="choiceBox1" prefWidth="150.0" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <ChoiceBox fx:id="choiceBox2" prefWidth="150.0" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <ChoiceBox fx:id="choiceBox3" prefWidth="150.0" />
+                              <Label prefHeight="12.0" prefWidth="87.0" />
+                              <ChoiceBox fx:id="choiceBox4" prefWidth="150.0" />
+
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <JFXButton onAction="#AddToWait" prefHeight="105.0" prefWidth="88.0" styleClass="Btn" text="OK" textFill="WHITE" />
+                              <JFXButton onAction="#Clear" prefHeight="105.0" prefWidth="88.0" styleClass="Btn" text="Clear" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="362.0" text="後備隊列" />
+                  <HBox prefHeight="229.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="進程名" />
+                              <JFXListView fx:id="WaitProcess" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="運行時間" />
+                              <JFXListView fx:id="WaitTime" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="KB" />
+                              <JFXListView fx:id="WaitKB" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="優先級" />
+                              <JFXListView fx:id="WaitPriority" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="124.0" prefWidth="88.0" />
+                              <JFXButton onAction="#run" prefHeight="105.0" prefWidth="123.0" styleClass="Btn" text="運行" textFill="WHITE" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="362.0" text="就緒隊列" />
+                  <HBox prefHeight="229.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="進程名" />
+                              <JFXListView fx:id="ReadyProcess" onMouseClicked="#holdReadrList" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="運行時間" />
+                              <JFXListView fx:id="ReadyTime" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="優先級" />
+                              <JFXListView fx:id="ReadyPriority" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="PCB指針" />
+                              <JFXListView fx:id="ReadyPCB" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <JFXButton onAction="#holdProcess" prefHeight="105.0" prefWidth="123.0" text="掛起" />
+                              <JFXButton onAction="#doProcess" prefHeight="105.0" prefWidth="88.0" text="Next" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="362.0" text="CPU" />
+                  <HBox prefHeight="209.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="202.0" prefWidth="130.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="CPU" />
+                              <Label prefHeight="27.0" prefWidth="136.0" />
+                              <TextField fx:id="CPUrocess" />
+                              <Label prefHeight="57.0" prefWidth="130.0" />
+                              <Label prefHeight="15.0" prefWidth="362.0" text="道數:" />
+                              <ChoiceBox fx:id="figureOfWay" prefWidth="150.0" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="時間" />
+                              <Label prefHeight="27.0" prefWidth="136.0" />
+                              <TextField fx:id="CPUTime" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="優先級" />
+                              <Label prefHeight="27.0" prefWidth="136.0" />
+                              <TextField fx:id="CPUriority" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="362.0" text="掛起隊列" />
+                  <HBox prefHeight="229.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="進程名" />
+                              <JFXListView fx:id="HoldProcess" onMouseClicked="#CancelholdReadrList" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="運行時間" />
+                              <JFXListView fx:id="HoldTime" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="優先級" />
+                              <JFXListView fx:id="HoldPriority" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="124.0" prefWidth="88.0" />
+                              <JFXButton prefHeight="105.0" prefWidth="123.0" styleClass="Btn" text="解掛" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <children>
+                  <Label prefHeight="15.0" prefWidth="362.0" text="終止進程" />
+                  <HBox prefHeight="229.0" prefWidth="350.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="15.0" prefWidth="362.0" text="進程名" />
+                              <JFXListView fx:id="FinalProcess" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <VBox prefHeight="200.0" prefWidth="100.0">
+                           <children>
+                              <Label prefHeight="124.0" prefWidth="88.0" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

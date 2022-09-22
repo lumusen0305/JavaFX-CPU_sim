@@ -1,0 +1,10 @@
+#BorderPane1{
+    -fx-background-color: linear-gradient(#00f7ff,#ffffff);
+}
+.Btn {
+    -fx-background-color: #537ae6;
+
+}
+.Btn:hover{
+    -fx-background-color:#4275ff;
+}
